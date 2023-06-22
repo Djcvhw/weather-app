@@ -1,0 +1,59 @@
+{
+  "name": "weather-app",
+  "productName": "weather-app",
+  "version": "1.0.0",
+  "description": "Weather application",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "npm run build && electron-forge start",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build:win": "npm run build && npx electron-packager . --overwrite --platform=win32 --arch=x64 --prune=true --out=out --win32metadata.CompanyName=Djcvhw --win32metadata.ProductName=Weather-app --app-version=0.1.6 --app-copyright=Djcvhw --build-version=0.1.0 --ignore=node_modules --ignore=src",
+    "package": "npm run build && electron-forge package",
+    "make": "npm run build && electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "Djcvhw",
+    "email": "djcvhw1@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/material": "^5.11.8",
+    "@rematch/core": "^2.2.0",
+    "axios": "^1.3.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.20.7",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
+    "babel-loader": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
+    "electron": "23.0.0",
+    "electron-packager": "^17.1.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "svg-sprite-loader": "^6.0.11",
+    "terser-webpack-plugin": "^5.3.6",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
